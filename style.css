@@ -1,0 +1,20 @@
+html, body  {
+  height : 100% ; 
+}
+
+#all {
+  height : 100% ; 
+  background-image : url('https://static.pexels.com/photos/110874/pexels-photo-110874-large.jpeg') ; 
+  background-size : cover ;
+}
+
+img {
+  width : 10% ;
+  margin-left : auto ;
+  margin-right : auto 
+}
+p {
+  color : white ; 
+  font-size : 200%  ;
+  text-align : center
+}
