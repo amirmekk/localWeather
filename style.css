@@ -1,20 +1,31 @@
 html, body  {
   height : 100% ; 
+  background-color : #607D8B ;
+  font-family : 'Roboto Condensed', sans-serif;
 }
 
 #all {
-  height : 100% ; 
-  background-image : url('https://static.pexels.com/photos/110874/pexels-photo-110874-large.jpeg') ; 
-  background-size : cover ;
-}
-
-img {
-  width : 10% ;
-  margin-left : auto ;
-  margin-right : auto 
-}
-p {
+  border : 10px white solid ;
+  border-radius : 10px;
   color : white ; 
+  background-size:cover; 
+  background-repeat:no-repeat;
+  background-position: center center;  
+}
+img {
+  display : block ;
+  margin-left : auto ;
+  margin-right : auto ;
+  width : 5%
+}
+p:not(:last-child) {
   font-size : 200%  ;
   text-align : center
+}
+#temp {
+  font-size : 400%  ;
+  padding : -20% ;
+}
+#approx {
+  font-size : 80%  ;
 }
