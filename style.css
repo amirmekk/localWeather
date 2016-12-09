@@ -1,13 +1,17 @@
+/* no bootstrap just pure css */
 html, body  {
   height : 100% ; 
   background-color : #607D8B ;
   font-family : 'Roboto Condensed', sans-serif;
 }
-
 #all {
   border : 10px white solid ;
   border-radius : 10px;
   color : white ; 
+  width : 50% ;
+  margin-top : 5% ;
+  margin-left : auto ;
+  margin-right : auto ;
   background-size:cover; 
   background-repeat:no-repeat;
   background-position: center center;  
@@ -16,16 +20,47 @@ img {
   display : block ;
   margin-left : auto ;
   margin-right : auto ;
-  width : 5%
+  width : 10%
 }
-p:not(:last-child) {
+p:not(:last-child){
   font-size : 200%  ;
   text-align : center
 }
+#digree {
+  display : block ;
+  margin-left : auto ;
+  margin-right : auto ;
+  border : none ; 
+  background-color : transparent ;
+  padding: 5px 32px;
+  font-size : 30px ;
+  border: 2px solid white;
+  color : white ; 
+  margin-top : -5% ;
+}
+#digree:hover {
+  background-color : white ;
+  color : black ;
+  -webkit-transition: background-color 400ms linear;
+  -moz-transition: background-color 400ms linear;
+  -o-transition: background-color 400ms linear;
+  -ms-transition: background-color 400ms linear;
+  transition: background-color 400ms linear;
+}
+
 #temp {
   font-size : 400%  ;
   padding : -20% ;
 }
 #approx {
   font-size : 80%  ;
+}
+@media (max-width : 600px) {
+  #all {
+    width : 90% ;
+    margin-top : 5% ;
+  }
+  img {
+    width : 20%
+  }
 }
