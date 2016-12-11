@@ -1,15 +1,15 @@
 'use strict';
 //didn't use document onload  because u need the script to set everything from the temprature to background ...etcxx
-const backgrounds = ['https://static.pexels.com/photos/110874/pexels-photo-110874-large.jpeg',
+const backgrounds = ['http://i1097.photobucket.com/albums/g354/amirmekk/OD2L930-min_zpshnuagye0.jpg',
                    'https://static.pexels.com/photos/3768/sky-sunny-clouds-cloudy-large.jpg',
+                   'http://i1097.photobucket.com/albums/g354/amirmekk/pexels-photo-min_zpsrclwrpzr.jpg',
                    'https://static.pexels.com/photos/24475/pexels-photo-24475-large.jpg',
-                   'https://static.pexels.com/photos/7865/sunset-wind-wind-farm-clean-energy-large.jpg'] ,
-    backgroundsName = ['rainy','sunny','snowy','windy'],
+                   'http://i1097.photobucket.com/albums/g354/amirmekk/stockvault-sunrise121500-min_zpsk3253qrb.jpg'] ,
+    backgroundsName = ['light rain','clear sky and few clouds','rain and thunderstorm','snow' ,'dark clouds'],
     city = document.getElementById('city'),
     temp = document.getElementById('temp') ,
     button = document.getElementById('digree') ,
-    description = document.getElementById('description'),
-    digreeSymbol = document.getElementById('digreeSymbol');
+    description = document.getElementById('description');
 
   $.getJSON('http://freegeoip.net/json/?callback=?' , function(data){ 
       // getting user position I did not html5 geolocation because if u r on chrome you must have an https connection to use it
@@ -28,27 +28,28 @@ const backgrounds = ['https://static.pexels.com/photos/110874/pexels-photo-11087
           $('#icon').attr({'src' : iconURL ,'alt' : parsedData.weather[0].description ,
                            'title' :parsedData.weather[0].description  });
           //setting the background image of the DIV according to the weather 
-          if(parsedData.weather[0].description === 'light rain' || parsedData.weather[0].description === 'rain' || parsedData.weather[0].description === 'thunderstorm' ){
+          if(parsedData.weather[0].description === 'light rain'){
             $('#all').css('background-image', `url(" ${backgrounds[0]}")`)}
             else if(parsedData.weather[0].description === 'clear sky' || parsedData.weather[0].description === 'few clouds'){
               $('#all').css('background-image', `url(" ${backgrounds[1]}")`)
             }
-          else if(parsedData.weather[0].description === 'snow'){
+          else if(parsedData.weather[0].description === 'rain' || parsedData.weather[0].description === 'thunderstorm' ){
               $('#all').css('background-image', `url(" ${backgrounds[2]}")`)
             }
-          else if(parsedData.weather[0].description === 'scattered clouds' || parsedData.weather[0].description === 'broken clouds'){
+          else if(parsedData.weather[0].description === 'snow'){
               $('#all').css('background-image', `url(" ${backgrounds[3]}")`)
+            }
+          else if(parsedData.weather[0].description === 'scattered clouds' || parsedData.weather[0].description === 'broken clouds'){
+              $('#all').css('background-image', `url(" ${backgrounds[4]}")`)
             }
           // this is for converting from Celsius to Fahrenheit and the other way around
           button.addEventListener('click' , () => {
           if(button.innerHTML === 'Fº'){
             temp.innerHTML = Math.round(parsedData.main.temp * 1.8 + 32) + ' Fº'  ;
             button.innerHTML = 'Cº' ;
-            digreeSymbol.innerHTML = 'Cº' ;
           }else {
             temp.innerHTML = parsedData.main.temp + ' Cº'   ;
             button.innerHTML = 'Fº' ;
-            digreeSymbol.innerHTML = 'Cº' ;
           }
           })
           
